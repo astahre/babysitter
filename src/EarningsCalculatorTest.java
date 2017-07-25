@@ -22,5 +22,10 @@ public class EarningsCalculatorTest {
 	public void twoRegularHoursEarns24Dollars() {
 		assertEquals(24, ec.calculateEarnings(2, 0, 0));
 	}
+	
+	@Test
+	public void threePostBedtimeHoursEarns24Dollars() {
+		assertEquals(24, ec.calculateEarnings(0, 3, 0));
+	}
 
 }
