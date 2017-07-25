@@ -1,11 +1,12 @@
 
 public class EarningsCalculator {
 
-	public int calculateEarnings(int regularHours, int postBedtimeHours, int k) {
+	public int calculateEarnings(int regularHours, int postBedtimeHours, int postMidnightHours) {
 		int regularWages = regularHours * 12;
 		int postBedtimeWages = postBedtimeHours * 8;
+		int postMidnightWages = postMidnightHours * 16;
 		
-		return regularWages + postBedtimeWages;
+		return regularWages + postBedtimeWages + postMidnightWages;
 	}
 
 }
