@@ -1,9 +1,8 @@
 
 public class EarningsCalculator {
 
-	public int calculateEarnings(int i, int j, int k) {
-		// TODO Auto-generated method stub
-		return 12;
+	public int calculateEarnings(int regularHours, int j, int k) {
+		return 12 * regularHours;
 	}
 
 }
