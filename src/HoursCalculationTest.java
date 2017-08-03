@@ -18,13 +18,13 @@ public class HoursCalculationTest {
 	@Test
 	public void timeIn5TimeOut8NoBedtimeEquals3RegularHours() {
 		expected[0] = 3;
-		assertArrayEquals(expected, hc.calculateHours("05 PM", "08 PM", "09 PM"));
+		assertArrayEquals(expected, hc.calculateHours("05 PM", "08 PM", null));
 	}
 	
 	@Test
 	public void timeIn5TimeOut9NoBedtimeEquals4RegularHours() {
 		expected[0] = 4;
-		assertArrayEquals(expected, hc.calculateHours("05 PM", "09 PM", "09 PM"));
+		assertArrayEquals(expected, hc.calculateHours("05 PM", "09 PM", null));
 	}
 
 }
