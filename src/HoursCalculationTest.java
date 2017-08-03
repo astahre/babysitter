@@ -26,5 +26,12 @@ public class HoursCalculationTest {
 		expected[0] = 4;
 		assertArrayEquals(expected, hc.calculateHours("05 PM", "09 PM", null));
 	}
+	
+	@Test
+	public void timeIn5TimeOut10Bedtime9Equals4RegularHoursAnd1PostBedtimeHour() {
+		expected[0] = 4;
+		expected[1] = 1;
+		assertArrayEquals(expected, hc.calculateHours("05 PM", "10 PM", "09 PM"));
+	}
 
 }
