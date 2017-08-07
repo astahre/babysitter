@@ -23,7 +23,7 @@ public class HoursCalculation {
 			if (timeOut.isAfter(midnight) && timeOut.isBefore(latestTimeOut)) {
 				Duration postMidnightHours = Duration.between(midnight, timeOut);
 				postBedtimeHours = Duration.between(timeBed, midnight);
-				hoursPerPayrate[1] = postBedtimeHours.toHours() + 24;
+				hoursPerPayrate[1] = Math.floorMod(postBedtimeHours.toHours(), 24);
 				hoursPerPayrate[2] = postMidnightHours.toHours();
 			}
 		}
