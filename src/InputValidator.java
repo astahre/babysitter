@@ -8,8 +8,12 @@ public class InputValidator {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh a");
 		LocalTime inTime = LocalTime.parse(timeIn, formatter );
 		LocalTime earliestTimeIn = LocalTime.parse("05 PM", formatter );
+		LocalTime outTime = LocalTime.parse(timeOut, formatter);
 		LocalTime latestTimeOut = LocalTime.parse("04 AM", formatter);
 		if (inTime.isBefore(earliestTimeIn) && inTime.isAfter(latestTimeOut)) {
+			return false;
+		}
+		if (outTime.isAfter(latestTimeOut) && outTime.isBefore(earliestTimeIn)) {
 			return false;
 		}
 		return true;
