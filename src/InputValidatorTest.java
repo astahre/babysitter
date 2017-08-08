@@ -32,6 +32,11 @@ public class InputValidatorTest {
 	public void outTimeOF4amIsValid() {
 		assertEquals(true, iv.validateTime("05 PM", "04 AM"));
 	}
+	
+	@Test
+	public void amIsValid() {
+		assertEquals(true, iv.validateAmPm("AM"));
+	}
 
 	
 }

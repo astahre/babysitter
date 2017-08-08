@@ -19,5 +19,9 @@ public class InputValidator {
 		return true;
 	}
 
+	public boolean validateAmPm(String ampm) {
+		return true;
+	}
+
 
 }
