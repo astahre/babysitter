@@ -20,7 +20,11 @@ public class InputValidator {
 	}
 
 	public boolean validateAmPm(String ampm) {
-		return true;
+		if (ampm == "AM") {
+			return true;			
+		} else {
+			return false;
+		}
 	}
 
 

@@ -37,6 +37,10 @@ public class InputValidatorTest {
 	public void amIsValid() {
 		assertEquals(true, iv.validateAmPm("AM"));
 	}
-
+	
+	@Test
+	public void smIsNotValid() {
+		assertEquals(false, iv.validateAmPm("SM"));
+	}
 	
 }
