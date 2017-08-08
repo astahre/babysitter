@@ -9,7 +9,9 @@ public class BabySitterPayCalculator {
 		Scanner scanner = new Scanner(System.in);
 		int inputInTime = scanner.nextInt();
 		String inTime = String.format("%02d", inputInTime);
-		outputMessage = inTime;
+		System.out.println("AM or PM");
+		String aMpM = scanner.next().toUpperCase();
+		outputMessage = inTime + " " + aMpM;
 		System.out.println(outputMessage);
 	}
 }
