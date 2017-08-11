@@ -27,15 +27,17 @@ public class BabySitterPayCalculatorTest {
 	}
 
 	@Test
-	public void timeIn5Returns05() {
-		String input = "5\npm\n";
+	public void timeIn5pmTimeOut4amBedtime9pm() {
+		String input = "5\npm\n4\nam\n";
 		ByteArrayInputStream fakeIn = new ByteArrayInputStream(input.getBytes());
 		System.setIn(fakeIn);
 		BabySitterPayCalculator.main(new String[0]);
 		String[] lines = new String(fakeOut.toByteArray()).split("\n");
 		assertEquals("Enter the starting hour of your shift:", lines[0]);
 		assertEquals("AM or PM", lines[1]);
-		assertEquals("05 PM", lines[2]);
+		assertEquals("Enter the ending hour of your shift:", lines[2]);
+		assertEquals("AM or PM", lines[3]);
+		assertEquals("04 AM", lines[4]);
 	}
 	
 	@After
