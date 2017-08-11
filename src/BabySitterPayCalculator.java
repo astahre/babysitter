@@ -14,6 +14,8 @@ public class BabySitterPayCalculator {
 		outputMessage = timeIn;
 		String timeOut = enterTimeOut();
 		outputMessage = timeOut;
+		String bedtime = enterBedtime();
+		outputMessage = bedtime;
 		System.out.println(outputMessage);
 		scanner.close();
 		
@@ -35,5 +37,14 @@ public class BabySitterPayCalculator {
 		String aMpM = scanner.next();
 		String timeOut = ConvertTimeInputsToString.convertInputs(inputOutTime, aMpM);
 		return timeOut;
+	}
+	
+	private String enterBedtime() {
+		System.out.println("Enter the bedtime:");
+		int inputBedtime = scanner.nextInt();
+		System.out.println("AM or PM");
+		String aMpM = scanner.next();
+		String bedtime = ConvertTimeInputsToString.convertInputs(inputBedtime, aMpM);
+		return bedtime;
 	}
 }

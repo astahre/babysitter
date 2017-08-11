@@ -28,7 +28,7 @@ public class BabySitterPayCalculatorTest {
 
 	@Test
 	public void timeIn5pmTimeOut4amBedtime9pm() {
-		String input = "5\npm\n4\nam\n";
+		String input = "5\npm\n4\nam\n9\npm\n";
 		ByteArrayInputStream fakeIn = new ByteArrayInputStream(input.getBytes());
 		System.setIn(fakeIn);
 		BabySitterPayCalculator.main(new String[0]);
@@ -37,7 +37,9 @@ public class BabySitterPayCalculatorTest {
 		assertEquals("AM or PM", lines[1]);
 		assertEquals("Enter the ending hour of your shift:", lines[2]);
 		assertEquals("AM or PM", lines[3]);
-		assertEquals("04 AM", lines[4]);
+		assertEquals("Enter the bedtime:", lines[4]);
+		assertEquals("AM or PM", lines[5]);
+		assertEquals("09 PM", lines[6]);
 	}
 	
 	@After
