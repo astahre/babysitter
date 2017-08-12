@@ -13,7 +13,7 @@ public class FindOutputsForDisplay {
 			long[] hoursPerPayrate = HoursCalculation.calculateHours(timeIn, timeOut, bedtime);
 			long earnings = EarningsCalculator.calculateEarnings(hoursPerPayrate[0], hoursPerPayrate[1], hoursPerPayrate[2]);
 			String wages = String.valueOf(earnings);
-			return "$" + wages;
+			return "Tonight you have earned $" + wages;
 		} else if (inTime.isBefore(earliestTimeIn)) {
 			return "The in time you have entered is too early, please run the calculator again with a valid time";
 		} else {
