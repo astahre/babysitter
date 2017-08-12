@@ -19,7 +19,7 @@ public class HoursCalculation {
 			regularHours = Duration.between(timeIn, timeBed);
 			hoursPerPayrate[0] = regularHours.toHours();
 			
-			if (timeOut.isAfter(midnight) && timeOut.isBefore(latestTimeOut)) {
+			if (timeOut.isAfter(midnight) && !timeOut.isAfter(latestTimeOut)) {
 				Duration postMidnightHours = Duration.between(midnight, timeOut);
 				postBedtimeHours = Duration.between(timeBed, midnight);
 				hoursPerPayrate[2] = postMidnightHours.toHours();
