@@ -1,51 +1,45 @@
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 
 public class EarningsCalculatorTest {
 	
-	private EarningsCalculator ec;
 	
-	@Before
-	public void beforeEachTest() {
-		ec = new EarningsCalculator();
-	}
 
 	@Test
 	public void oneRegularHourEarns12Dollars() {
-		assertEquals(12, ec.calculateEarnings(1, 0, 0));
+		assertEquals(12, EarningsCalculator.calculateEarnings(1, 0, 0));
 	}
 	
 	@Test
 	public void twoRegularHoursEarns24Dollars() {
-		assertEquals(24, ec.calculateEarnings(2, 0, 0));
+		assertEquals(24, EarningsCalculator.calculateEarnings(2, 0, 0));
 	}
 	
 	@Test
 	public void threePostBedtimeHoursEarns24Dollars() {
-		assertEquals(24, ec.calculateEarnings(0, 3, 0));
+		assertEquals(24, EarningsCalculator.calculateEarnings(0, 3, 0));
 	}
 	
 	@Test
 	public void fourPostBedtimeHoursEarns32Dollars() {
-		assertEquals(32, ec.calculateEarnings(0, 4, 0));
+		assertEquals(32, EarningsCalculator.calculateEarnings(0, 4, 0));
 	}
 	
 	@Test
 	public void twoPostMidnightHoursEarns32Dollars() {
-		assertEquals(32, ec.calculateEarnings(0, 0, 2));
+		assertEquals(32, EarningsCalculator.calculateEarnings(0, 0, 2));
 	}
 	
 	@Test
 	public void threePostMidnightHoursEarns48Dollars() {
-		assertEquals(48, ec.calculateEarnings(0, 0, 3));
+		assertEquals(48, EarningsCalculator.calculateEarnings(0, 0, 3));
 	}
 	
 	@Test
 	public void wagesfor5pmTo2amEquals104() {
-		assertEquals(104, ec.calculateEarnings(4, 3, 2));
+		assertEquals(104, EarningsCalculator.calculateEarnings(4, 3, 2));
 	}
 
 }

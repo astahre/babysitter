@@ -1,51 +1,44 @@
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 
 public class InputValidatorTest {
 	
-	private InputValidator iv;
-	
-	@Before
-	public void beforeEachTest() {
-		iv = new InputValidator();
-	}
 
 	@Test
 	public void inTimeOF4pmIsNotValid() {
-		assertEquals(false, iv.validateTime("04 PM", "08 PM"));
+		assertEquals(false, InputValidator.validateTime("04 PM", "08 PM"));
 	}
 	
 	@Test
 	public void inTimeOF5pmIsValid() {
-		assertEquals(true, iv.validateTime("05 PM", "08 PM"));
+		assertEquals(true, InputValidator.validateTime("05 PM", "08 PM"));
 	}
 	
 	@Test
 	public void outTimeOF5amIsNotValid() {
-		assertEquals(false, iv.validateTime("05 PM", "05 AM"));
+		assertEquals(false, InputValidator.validateTime("05 PM", "05 AM"));
 	}
 	
 	@Test
 	public void outTimeOF4amIsValid() {
-		assertEquals(true, iv.validateTime("05 PM", "04 AM"));
+		assertEquals(true, InputValidator.validateTime("05 PM", "04 AM"));
 	}
 	
 	@Test
 	public void amIsValid() {
-		assertEquals(true, iv.validateAmPm("AM"));
+		assertEquals(true, InputValidator.validateAmPm("AM"));
 	}
 	
 	@Test
 	public void smIsNotValid() {
-		assertEquals(false, iv.validateAmPm("SM"));
+		assertEquals(false, InputValidator.validateAmPm("SM"));
 	}
 	
 	@Test
 	public void pmIsValid() {
-		assertEquals(true, iv.validateAmPm("PM"));
+		assertEquals(true, InputValidator.validateAmPm("PM"));
 	}
 	
 }
