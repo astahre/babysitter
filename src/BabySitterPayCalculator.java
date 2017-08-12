@@ -9,13 +9,10 @@ public class BabySitterPayCalculator {
 	}
 
 	private void run() {
-		String outputMessage = "test";
 		String timeIn = enterTimeIn();
-		outputMessage = timeIn;
 		String timeOut = enterTimeOut();
-		outputMessage = timeOut;
 		String bedtime = enterBedtime();
-		outputMessage = bedtime;
+		String outputMessage = FindOutputsForDisplay.findOutputs(timeIn, timeOut, bedtime);
 		System.out.println(outputMessage);
 		scanner.close();
 		
