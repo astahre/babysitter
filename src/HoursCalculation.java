@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class HoursCalculation {
 
-	public long[] calculateHours(String inTime, String outTime, String bedTime) {
+	public static long[] calculateHours(String inTime, String outTime, String bedTime) {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh a");
 		LocalTime timeIn = LocalTime.parse(inTime, formatter );
 		LocalTime timeOut = LocalTime.parse(outTime, formatter);
