@@ -18,13 +18,19 @@ public class HoursCalculation {
 			Duration postBedtimeHours = Duration.between(timeBed, timeOut);
 			regularHours = Duration.between(timeIn, timeBed);
 			hoursPerPayrate[0] = regularHours.toHours();
+			hoursPerPayrate[0] = regularHours.toHours();
 			
 			if (timeOut.isAfter(midnight) && !timeOut.isAfter(latestTimeOut)) {
 				Duration postMidnightHours = Duration.between(midnight, timeOut);
 				postBedtimeHours = Duration.between(timeBed, midnight);
 				hoursPerPayrate[2] = postMidnightHours.toHours();
 			}
-			hoursPerPayrate[1] = Math.floorMod(postBedtimeHours.toHours(), 24);
+			if (timeBed.isAfter(timeOut) && timeOut.isBefore(midnight)) {
+				regularHours = Duration.between(timeIn, timeOut);
+				hoursPerPayrate[1] = 0;
+			} else {
+				hoursPerPayrate[1] = Math.floorMod(postBedtimeHours.toHours(), 24);
+			}
 		}
 		return hoursPerPayrate;
 	}
