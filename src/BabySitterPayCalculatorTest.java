@@ -39,7 +39,7 @@ public class BabySitterPayCalculatorTest {
 		assertEquals("AM or PM", lines[3]);
 		assertEquals("Enter the bedtime:", lines[4]);
 		assertEquals("AM or PM", lines[5]);
-		assertEquals("09 PM", lines[6]);
+		assertEquals("Tonight you have earned $136", lines[6]);
 	}
 	
 	@After
